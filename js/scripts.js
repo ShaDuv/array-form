@@ -2,24 +2,14 @@ $(document).ready(function () {
   $('#form-one').submit(function (event) {
     event.preventDefault();
 
-    var favFood = [];
-    favFood.push($("#food1").val());
-    favFood.push($("#food2").val());
-    console.log (favFood);
+    var favorites = ["food1", "food2", "vaca1", "vaca2", "portland1", "portland2", "entertainment1", "entertainment2"];
 
-    var vacation = []
-    vacation.push($("#vaca1").val());
-    vacation.push($("#vaca2").val());
-    console.log (vacation);
+    var favArray = [];
+    favorites.forEach(function(favorite){
+      var userInput = $("input#" + favorite).val();
+      favArray.push(userInput);
+      console.log(favArray);
+    });
 
-    var portland = []
-    portland.push($('#portland1').val());
-    portland.push($('#portland2').val());
-    console.log (portland);
-
-    var entertainment = []
-    entertainment.push($("#entertainment1").val());
-    entertainment.push($("#entertainment2").val());
-    console.log (entertainment);
   });
 });
